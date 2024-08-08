@@ -129,7 +129,7 @@ function Home() {
             />
           ))
         ) : (
-          Array.from({ length: 8 }).map((_, index) => <SkeletonCard key={index} />)
+          Array.from({ length: 12 }).map((_, index) => <SkeletonCard key={index} />)
         )}
       </div>
 
