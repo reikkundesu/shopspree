@@ -26,6 +26,7 @@ function Home() {
       const response = await fetch(apiUrl);
       const data = await response.json();
       setIsLoading(false);
+      console.log(data);
       setResults(data.results); // Store the results in the state
       setPagination(data.pagination); // Store pagination data in the state
     } catch (error) {
@@ -75,7 +76,7 @@ function Home() {
 
   {/* Left Section: Heading */}
   <h1 className="text-2xl font-bold text-gray-100">
-    SHOWING ITEMS {pagination?.begin} OF {pagination?.end} RESULTS
+    SHOWING {pagination?.end} OF {pagination?.totalResults} RESULTS
   </h1>
 
   {/* Middle Section: Navigation Buttons */}
