@@ -113,7 +113,7 @@ function Home() {
   </div>
 </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {!isLoading ? (
           results.map((product, index) => (
             <ProductCard
@@ -126,7 +126,7 @@ function Home() {
             />
           ))
         ) : (
-          Array.from({ length: 10 }).map((_, index) => <SkeletonCard key={index} />)
+          Array.from({ length: 8 }).map((_, index) => <SkeletonCard key={index} />)
         )}
       </div>
 

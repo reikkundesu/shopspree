@@ -5,7 +5,7 @@ function ProductCard({ title, imageUrl, price, msrp }) {
 const formatPrice = (value) => parseFloat(value).toFixed(2);
 
   return (
-    <div className="relative bg-white border border-gray-200 rounded-lg shadow-md overflow-visible pb-5">
+    <div className="relative bg-white border border-gray-200 rounded-lg shadow-md overflow-visible pb-3">
 
         {msrp > price && (
         <div className="absolute top-0 left-0 bg-blue-500 text-white text-sm font-bold py-1 px-2 rounded-tr-lg rounded-br-lg transform -rotate-45 -translate-x-2 translate-y-2">
