@@ -1,0 +1,1 @@
+export const API_URL = 'https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=';
