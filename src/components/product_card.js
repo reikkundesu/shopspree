@@ -14,7 +14,7 @@ const formatPrice = (value) => parseFloat(value).toFixed(2);
         )}
 
         <img
-        src={imageUrl || 'https://via.placeholder.com/150'}
+        src={imageUrl}
         alt={title || 'Product Image'}
         className="w-full h-5/6 object-cover"
         />

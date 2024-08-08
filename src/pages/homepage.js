@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { API_URL } from '../variables/config';
+import { SEARCH_API_URL } from '../variables/config';
 import ProductCard from '../components/product_card';
 import SkeletonCard from '../components/skeleton';
+import logo from '../images/logo.png'
+import cartIcon from '../images/cart_icon.png'
 
 function Home() {
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('jeans') //set to default search "jeans" since there is no landing page;
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pagination, setPagination] = useState(1); // Add totalPages state for pagination
+  const [pagination, setPagination] = useState(1); 
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const fetchResults = async (page) => {
-    if (!searchTerm) return; // Do nothing if the search term is empty
+    if (!searchTerm) return; 
 
-    const apiUrl = `${API_URL}${encodeURIComponent(searchTerm)}&resultsFormat=native&page=${page}`;
+    const apiUrl = `${SEARCH_API_URL}${encodeURIComponent(searchTerm)}&resultsFormat=native&page=${page}`;
 
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log('API Data:', data); // Log the API response data
       setIsLoading(false);
       setResults(data.results); // Store the results in the state
       setPagination(data.pagination); // Store pagination data in the state
@@ -34,6 +35,7 @@ function Home() {
 
   useEffect(() => {
     fetchResults(currentPage);
+    window.scrollTo(0, 0);
     setIsLoading(true);
   }, [currentPage]);
 
@@ -47,29 +49,68 @@ function Home() {
     if (currentPage < pagination.totalPages) {
       setCurrentPage(currentPage + 1);
     }
-    console.log (currentPage);
   };
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 min-h-screen pt-10 px-14">
-      <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to ShopSpree</h1>
-      <p className="text-lg text-gray-600">Your one-stop shop for stress-free shopping spree!</p>
+    <div className="flex flex-col items-center bg-gray-100 min-h-screen px-20">
 
-      <div className="flex space-x-5 pt-10">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          placeholder="Search product..."
-          className="border border-gray-300 rounded-lg px-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-32 left-0 absolute"
         />
-        <button
-          onClick={() => fetchResults(currentPage)}
-          className="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          Search
-        </button>
-      </div>
+
+        <img
+          src={cartIcon}
+          alt="cart"
+          className="h-9 mt-14 right-10 absolute"
+        />
+
+      <div>
+        <h1 className="text-4xl font-bold text-gray-800 mt-5">Welcome to ShopSpree</h1>
+        <p className="text-lg text-gray-600 m-5">Your one-stop shop for stress-free shopping sprees!</p>
+      </div>  
+
+      <div className="flex w-screen border-t-4 border-indigo-700 px-10 py-7 pt-8 bg-indigo-900 items-center justify-between">
+
+  {/* Left Section: Heading */}
+  <h1 className="text-2xl font-bold text-gray-100">
+    SHOWING ITEMS {pagination?.begin} OF {pagination?.end} RESULTS
+  </h1>
+
+  {/* Middle Section: Navigation Buttons */}
+  <div className="flex space-x-4">
+    <button className="bg-indigo-700 font-bold border-b-4 border-white text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      HOME
+    </button>
+    <button className="bg-indigo-700 font-bold text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      NEW ARRIVALS
+    </button>
+    <button className="bg-indigo-700 font-bold text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      CATEGORIES
+    </button>
+  </div>
+
+  {/* Right Section: Search Bar and Button */}
+  <div className="flex items-center space-x-4">
+    <input
+      type="text"
+      value={searchTerm}
+      onChange={handleSearchChange}
+      placeholder="Search product..."
+      className="border border-gray-300 w-80 rounded-lg px-4 py-2 text-left placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <button
+      onClick={() => {
+        setCurrentPage(1); // Reset to the first page
+        fetchResults(1);
+      }}
+      className="bg-indigo-700 text-white rounded-lg px-4 py-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      Search
+    </button>
+  </div>
+</div>
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
         {!isLoading ? (
@@ -88,7 +129,7 @@ function Home() {
         )}
       </div>
 
-      {/* Pagination Controls */}
+      {/* Next and Previous Buttons */}
       { 
         pagination.totalPages ? 
         <div className="mt-8 flex justify-between items-center space-x-3">
@@ -103,7 +144,7 @@ function Home() {
           <button
             onClick={handleNextPage}
             disabled={currentPage === pagination.totalPages}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300"
+            className="px-4 py-2 bg-indigo-700 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300"
           >
             Next
           </button>
@@ -111,6 +152,9 @@ function Home() {
         :
         null
       }
+      <div className="mt-8 py-12 bg-indigo-900 w-screen">
+
+      </div>
     </div>
   );
 }
