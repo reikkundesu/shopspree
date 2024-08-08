@@ -68,7 +68,7 @@ function Home() {
         />
 
       <div>
-        <h1 className="text-4xl font-bold text-gray-800 mt-5">Welcome to ShopSpree</h1>
+        <h1 className="text-4xl font-bold text-gray-700 mt-5">Welcome to ShopSpree</h1>
         <p className="text-lg text-gray-600 m-5">Your one-stop shop for stress-free shopping sprees!</p>
       </div>  
 
@@ -113,7 +113,7 @@ function Home() {
   </div>
 </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8">
         {!isLoading ? (
           results.map((product, index) => (
             <ProductCard
@@ -137,11 +137,11 @@ function Home() {
           <button
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
-            className="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 disabled:bg-gray-200"
+            className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 disabled:bg-gray-200"
           >
             Previous
           </button>
-          <span className="text-gray-800">Page {currentPage} of {pagination.totalPages}</span>
+          <span className="text-gray-700">Page {currentPage} of {pagination.totalPages}</span>
           <button
             onClick={handleNextPage}
             disabled={currentPage === pagination.totalPages}
