@@ -1,5 +1,5 @@
 # shopspree
-Technical Assesment for Job Application
+Technical Assesment for Job Application (Only for Web)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
