@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shopspree/static/css/main.6f7bd1df.css",
-    "main.js": "/shopspree/static/js/main.3c01cd69.js",
+    "main.css": "/shopspree/static/css/main.03c757f6.css",
+    "main.js": "/shopspree/static/js/main.f756019d.js",
     "static/js/453.f204b1dc.chunk.js": "/shopspree/static/js/453.f204b1dc.chunk.js",
     "static/media/logo.png": "/shopspree/static/media/logo.a9d81fe1ec9e42acb419.png",
     "static/media/cart_icon.png": "/shopspree/static/media/cart_icon.dbfec6b8cd563b39e26a.png",
     "index.html": "/shopspree/index.html",
-    "main.6f7bd1df.css.map": "/shopspree/static/css/main.6f7bd1df.css.map",
-    "main.3c01cd69.js.map": "/shopspree/static/js/main.3c01cd69.js.map",
+    "main.03c757f6.css.map": "/shopspree/static/css/main.03c757f6.css.map",
+    "main.f756019d.js.map": "/shopspree/static/js/main.f756019d.js.map",
     "453.f204b1dc.chunk.js.map": "/shopspree/static/js/453.f204b1dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f7bd1df.css",
-    "static/js/main.3c01cd69.js"
+    "static/css/main.03c757f6.css",
+    "static/js/main.f756019d.js"
   ]
 }
