@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/shopspree/static/css/main.50f3c53e.css",
-    "main.js": "/shopspree/static/js/main.1d61b983.js",
+    "main.css": "/shopspree/static/css/main.2374e371.css",
+    "main.js": "/shopspree/static/js/main.dcb2b9e2.js",
     "static/js/453.f204b1dc.chunk.js": "/shopspree/static/js/453.f204b1dc.chunk.js",
+    "static/media/instagram_icon.png": "/shopspree/static/media/instagram_icon.e3034e3416fb9b6b8ccb.png",
     "static/media/logo.png": "/shopspree/static/media/logo.a9d81fe1ec9e42acb419.png",
+    "static/media/logo-white.png": "/shopspree/static/media/logo-white.26c0519abbddfb8950f7.png",
+    "static/media/facebook_icon.png": "/shopspree/static/media/facebook_icon.bbb2398043ece05e2308.png",
     "static/media/heart-icon.png": "/shopspree/static/media/heart-icon.de6edc545743de379a82.png",
     "static/media/cart_icon.png": "/shopspree/static/media/cart_icon.dbfec6b8cd563b39e26a.png",
     "index.html": "/shopspree/index.html",
-    "main.50f3c53e.css.map": "/shopspree/static/css/main.50f3c53e.css.map",
-    "main.1d61b983.js.map": "/shopspree/static/js/main.1d61b983.js.map",
+    "main.2374e371.css.map": "/shopspree/static/css/main.2374e371.css.map",
+    "main.dcb2b9e2.js.map": "/shopspree/static/js/main.dcb2b9e2.js.map",
     "453.f204b1dc.chunk.js.map": "/shopspree/static/js/453.f204b1dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50f3c53e.css",
-    "static/js/main.1d61b983.js"
+    "static/css/main.2374e371.css",
+    "static/js/main.dcb2b9e2.js"
   ]
 }
