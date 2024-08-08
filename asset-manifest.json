@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shopspree/static/css/main.636da34d.css",
+    "main.css": "/shopspree/static/css/main.de63f064.css",
     "main.js": "/shopspree/static/js/main.29ee475f.js",
     "static/js/453.f204b1dc.chunk.js": "/shopspree/static/js/453.f204b1dc.chunk.js",
     "static/media/logo.png": "/shopspree/static/media/logo.a9d81fe1ec9e42acb419.png",
     "static/media/cart_icon.png": "/shopspree/static/media/cart_icon.dbfec6b8cd563b39e26a.png",
     "index.html": "/shopspree/index.html",
-    "main.636da34d.css.map": "/shopspree/static/css/main.636da34d.css.map",
+    "main.de63f064.css.map": "/shopspree/static/css/main.de63f064.css.map",
     "main.29ee475f.js.map": "/shopspree/static/js/main.29ee475f.js.map",
     "453.f204b1dc.chunk.js.map": "/shopspree/static/js/453.f204b1dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.636da34d.css",
+    "static/css/main.de63f064.css",
     "static/js/main.29ee475f.js"
   ]
 }
