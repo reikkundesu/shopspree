@@ -3,7 +3,10 @@ import { SEARCH_API_URL } from '../variables/config';
 import ProductCard from '../components/product_card';
 import SkeletonCard from '../components/skeleton';
 import logo from '../images/logo.png'
+import logoWhite from '../images/logo-white.png'
 import cartIcon from '../images/cart_icon.png'
+import instagramIcon from '../images/instagram_icon.png'
+import fbIcon from '../images/facebook_icon.png'
 
 function Home() {
 
@@ -153,8 +156,24 @@ function Home() {
         :
         null
       }
-      <div className="mt-8 py-12 bg-indigo-900 w-screen">
-
+      <div className="mt-8 py-5 border-t-4 border-indigo-700 bg-indigo-900 w-screen items-center">
+        <div className="flex justify-center space-x-12 items-center">
+          <img
+            src={fbIcon}
+            alt="Logo"
+            className="h-16"
+          />
+          <img
+            src={logoWhite}
+            alt="Logo"
+            className=" h-24"
+          />
+          <img
+            src={instagramIcon}
+            alt="Logo"
+            className="h-16"
+          />
+        </div>
       </div>
     </div>
   );
